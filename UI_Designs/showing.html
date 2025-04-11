@@ -1,0 +1,73 @@
+<!-- Header (تکرار در صفحات مختلف) -->  
+<header>  
+    <div class="logo">لوگو</div>  
+    <nav>  
+        <ul>  
+            <li><a href="#home">خانه</a></li>  
+            <li><a href="#about">درباره ما</a></li>  
+            <li><a href="#contact">تماس</a></li>  
+        </ul>  
+    </nav>  
+    <div class="auth-buttons">  
+        <button>ورود</button>  
+        <button>ثبت‌نام</button>  
+    </div>  
+</header>  
+
+<!-- Filter Section -->  
+<section class="filter-section">  
+    <h2>فیلتر بر اساس دسته‌بندی:</h2>  
+    <select id="category-filter" onchange="filterAds()">  
+        <option value="">همه دسته‌ها</option>  
+        <option value="electronics">الکترونیک</option>  
+        <option value="furniture">مبلمان</option>  
+        <option value="clothing">پوشاک</option>  
+        <option value="vehicles">خودرو</option>  
+    </select>  
+</section>  
+
+<!-- Ad List Section -->  
+<section class="ad-list">  
+    <h2>آگهی‌های فروش کالا</h2>  
+    <div class="ad-card" data-category="electronics">  
+        <img src="product-image1.jpg" alt="کالا 1">  
+        <h3>نام کالا 1</h3>  
+        <p>قیمت: 150,000 تومان</p>  
+        <button>مشاهده بیشتر</button>  
+    </div>  
+    <div class="ad-card" data-category="furniture">  
+        <img src="product-image2.jpg" alt="کالا 2">  
+        <h3>نام کالا 2</h3>  
+        <p>قیمت: 200,000 تومان</p>  
+        <button>مشاهده بیشتر</button>  
+    </div>  
+    <div class="ad-card" data-category="clothing">  
+        <img src="product-image3.jpg" alt="کالا 3">  
+        <h3>نام کالا 3</h3>  
+        <p>قیمت: 100,000 تومان</p>  
+        <button>مشاهده بیشتر</button>  
+    </div>  
+    <div class="ad-card" data-category="vehicles">  
+        <img src="product-image4.jpg" alt="کالا 4">  
+        <h3>نام کالا 4</h3>  
+        <p>قیمت: 1,500,000 تومان</p>  
+        <button>مشاهده بیشتر</button>  
+    </div>  
+    <!-- کارت‌های بیشتری می‌توانند قرار داده شوند -->  
+</section>  
+
+<script>  
+// تابع برای فیلتر کردن آگهی‌ها بر اساس دسته‌بندی انتخاب شده  
+function filterAds() {  
+    const selectedCategory = document.getElementById('category-filter').value;  
+    const ads = document.querySelectorAll('.ad-card');  
+
+    ads.forEach(ad => {  
+        if (selectedCategory === "" || ad.getAttribute('data-category') === selectedCategory) {  
+            ad.style.display = "block"; // نمایش آگهی  
+        } else {  
+            ad.style.display = "none"; // پنهان کردن آگهی  
+        }  
+    });  
+}  
+</script>  
