@@ -1,0 +1,56 @@
+<!-- Header -->  
+<header>  
+    <div class="logo">لوگو</div>  
+    <nav>  
+        <ul>  
+            <li><a href="#home">خانه</a></li>  
+            <li><a href="#my-ads">آگهی‌های من</a></li>  
+            <li><a href="#contact">تماس با ما</a></li>  
+        </ul>  
+    </nav>  
+</header>  
+
+<!-- ثبت آگهی -->  
+<section class="post-ad">  
+    <h2>ثبت آگهی فروش کالا</h2>  
+    <form>  
+        <label for="title">عنوان آگهی:</label>  
+       <input type="text" id="title" placeholder="عنوان را وارد کنید" required>  
+        
+   <select required>  
+            <option value="" disabled selected>انتخاب دسته‌بندی</option>  
+            <option value="electronics">الکترونیکی</option>  
+            <option value="clothing">پوشاک</option>  
+            <option value="furniture">مفروشاتی</option>  
+            <!-- دسته‌بندی‌های دیگر -->  
+        </select>  
+        
+        <label for="description">توضیحات:</label>  
+        <textarea id="description" placeholder="توضیحات را وارد کنید" required></textarea>  
+
+        <label for="price">قیمت:</label>  
+        <input type="number" id="price" placeholder="قیمت را وارد کنید" required>  
+
+        <label for="images">تصاویر:</label>  
+        <input type="file" id="images" multiple accept="image/*" onchange="previewImages()">  
+
+        <div id="imagePreview"></div> <!-- پیش‌نمایش تصاویر بارگذاری شده -->  
+
+        <button type="submit">ارسال آگهی</button>  
+    </form>  
+</section>  
+
+<script>  
+function previewImages() {  
+    const fileInput = document.getElementById('images');  
+    const previewContainer = document.getElementById('imagePreview');  
+    previewContainer.innerHTML = ''; // Clear previous images  
+    Array.from(fileInput.files).forEach(file => {  
+        const img = document.createElement('img');  
+        img.src = URL.createObjectURL(file);  
+        img.style.width = '100px'; // Width for preview  
+        img.style.margin = '5px';  
+        previewContainer.appendChild(img);  
+    });  
+}  
+</script>  
