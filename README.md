@@ -1198,7 +1198,7 @@ SOFTWARE.
 ### Core Team:
 - **الهام نصیری** - Product Owner & Backend Developer
   
-- **فاطمه صفری** - Frontend Developer & UI/UX Designer
+- **فاطمه صفری** & **الهام نصیری**- Frontend Developer & UI/UX Designer
   
 - **نسترن بیرجندی** - DevOps Engineer & System Administrator
 
